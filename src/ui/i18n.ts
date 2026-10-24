@@ -6,6 +6,8 @@ const dict: Record<Lang, Record<string, string>> = {
   ru: {
     appTitle: 'Sub Toolkit',
     appSubtitle: 'Декодер подписок и конвертер конфигов (всё в браузере)',
+    tabInput: 'Ввод',
+    tabExport: 'Экспорт',
     navInput: '1. Ввод',
     navNodes: '2. Узлы',
     navDns: '3. DNS',
@@ -17,6 +19,9 @@ const dict: Record<Lang, Record<string, string>> = {
     stepDone: 'Готово',
     stepActive: 'Текущий шаг',
     stepPending: 'Ожидает',
+    themeToggle: 'Переключить тему',
+    nodesSelectRow: 'Выбрать узел {name}',
+    nodesEmptyCta: 'Перейдите во вкладку «Ввод», чтобы добавить подписку',
 
     // Input
     inputTitle: 'Ввод подписки',
@@ -145,6 +150,8 @@ const dict: Record<Lang, Record<string, string>> = {
   en: {
     appTitle: 'Sub Toolkit',
     appSubtitle: 'Subscription decoder and config converter (all in browser)',
+    tabInput: 'Input',
+    tabExport: 'Export',
     navInput: '1. Input',
     navNodes: '2. Nodes',
     navDns: '3. DNS',
@@ -156,6 +163,10 @@ const dict: Record<Lang, Record<string, string>> = {
     stepDone: 'Done',
     stepActive: 'Current step',
     stepPending: 'Pending',
+    themeToggle: 'Toggle theme',
+    nodesSelectRow: 'Select node {name}',
+    nodesEmptyCta: 'Go to the Input tab to add a subscription',
+
     inputTitle: 'Subscription input',
     inputPaste: 'Paste subscription text, share links or Clash/Xray/sing-box JSON:',
     inputPlaceholder: 'vless://..., vmess://..., Clash YAML, Xray JSON, base64 subscription...',

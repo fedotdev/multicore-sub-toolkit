@@ -4,8 +4,6 @@ import { useCallback, useMemo } from 'preact/hooks'
 import { h } from 'preact'
 import { nodeToLink } from '../../core/serialize/links'
 import type { ProxyNode } from '../../core/model'
-import type { Step } from '../App'
-
 interface NodesStepProps {
   t: (key: string) => string
   nodes: ProxyNode[]
@@ -13,11 +11,10 @@ interface NodesStepProps {
   setNodeSearch: (v: string) => void
   selectedIds: Set<string>
   setSelectedIds: (v: Set<string>) => void
-  setStep: (v: Step) => void
 }
 
 export default function NodesStep(props: NodesStepProps) {
-  const { t, nodes, nodeSearch, setNodeSearch, selectedIds, setSelectedIds, setStep } = props
+  const { t, nodes, nodeSearch, setNodeSearch, selectedIds, setSelectedIds } = props
 
   const toggleAll = useCallback(() => {
     const all = nodes.every((n) => selectedIds.has(n.id))
@@ -104,11 +101,6 @@ export default function NodesStep(props: NodesStepProps) {
           )),
         ),
       ),
-    ),
-
-    selected.length && h('div', { style: { marginTop: 12 } },
-      h('div', { className: 'small', style: { marginBottom: 6 } }, t('nodesRoundTrip') + ' ' + selected.length + ' узла(ов)'),
-      h('button', { className: 'secondary', onClick: () => setStep('export') }, 'Далее: Экспорт →'),
     ),
   )
 }

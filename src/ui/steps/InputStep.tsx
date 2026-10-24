@@ -79,9 +79,9 @@ export default function InputStep(props: InputStepProps) {
       if (r.nodes.length) {
         setNodes(r.nodes)
         setSelectedIds(new Set(r.nodes.map((n) => n.id)))
-        setStep('nodes')
+        setStep('export')
       } else if (r.encrypted.length) {
-        setStep('nodes')
+        setStep('export')
       } else {
         setFetchErr(t('inputErrDecode') + ' узлы не найдены')
       }

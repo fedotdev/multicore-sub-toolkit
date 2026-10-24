@@ -3,17 +3,14 @@
 import { useCallback, useMemo } from 'preact/hooks'
 import { defaultDnsConfig, type DnsConfig, type DnsServer } from '../../core/model'
 import { detectDnsWarnings } from '../../core/dns'
-import type { Step } from '../App'
-
 interface DnsStepProps {
   t: (key: string) => string
   dnsConfig: DnsConfig
   setDnsConfig: (v: DnsConfig) => void
-  setStep: (v: Step) => void
 }
 
 export default function DnsStep(props: DnsStepProps) {
-  const { t, dnsConfig, setDnsConfig, setStep } = props
+  const { t, dnsConfig, setDnsConfig } = props
 
   const warnings = detectDnsWarnings(dnsConfig)
 
@@ -174,14 +171,6 @@ export default function DnsStep(props: DnsStepProps) {
         </div>
       )}
 
-      <div style={{ marginTop: 12, display: 'flex', gap: 10 }}>
-        <button className="secondary" onClick={() => setStep('routing')}>
-          Далее: Маршрутизация →
-        </button>
-        <button className="secondary" onClick={() => setStep('export')}>
-          К Экспорту →
-        </button>
-      </div>
     </section>
   )
 }

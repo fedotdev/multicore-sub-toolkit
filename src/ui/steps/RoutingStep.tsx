@@ -3,19 +3,16 @@
 import { useCallback, useMemo } from 'preact/hooks'
 import { buildRoutingRules } from '../../core/routing'
 import { defaultRouting, type RoutingConfig, type ZapretState } from '../../core/model'
-import type { Step } from '../App'
-
 interface RoutingStepProps {
   t: (key: string) => string
   routingConfig: RoutingConfig
   setRoutingConfig: (v: RoutingConfig) => void
   zapretState: ZapretState
   setZapretState: (v: ZapretState) => void
-  setStep: (v: Step) => void
 }
 
 export default function RoutingStep(props: RoutingStepProps) {
-  const { t, routingConfig, setRoutingConfig, zapretState, setZapretState, setStep } = props
+  const { t, routingConfig, setRoutingConfig, zapretState, setZapretState } = props
 
   const setField = useCallback((patch: Partial<RoutingConfig>) => setRoutingConfig({ ...routingConfig, ...patch }), [
     routingConfig,
@@ -156,14 +153,6 @@ export default function RoutingStep(props: RoutingStepProps) {
         </div>
       </section>
 
-      <div style={{ marginTop: 12, display: 'flex', gap: 10 }}>
-        <button className="secondary" onClick={() => setStep('dns')}>
-          ← Назад к DNS
-        </button>
-        <button className="secondary" onClick={() => setStep('export')}>
-          К Экспорту →
-        </button>
-      </div>
     </section>
   )
 }
